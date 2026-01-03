@@ -8,20 +8,20 @@
 </head>
 <body>
 
-    
+
     <div id="signin-box" class="card">
         <div class="logo-placeholder">Dayflow Logo</div>
         <h2 style="margin-bottom: 20px; color: #4b5563;">Sign In</h2>
-        <form>
+        <form onsubmit="handleLogin(event)">
             <div class="input-group">
                 <label>Login Id/Email :-</label>
-                <input type="text" placeholder="OIJODO20260001">
+                <input type="text" placeholder="OIJODO20260001" required>
             </div>
             <div class="input-group">
                 <label>Password :-</label>
-                <input type="password" placeholder="••••••••">
+                <input type="password" placeholder="••••••••" required>
             </div>
-            <button type="submit" class="btn-purple" onclick="handleLogin(event)">Sign In</button>
+            <button type="submit" class="btn-purple">Sign In</button>
         </form>
         <p class="footer-text">Don't have an Account? <span onclick="togglePages()">Sign Up</span></p>
     </div>
@@ -29,7 +29,7 @@
     <div id="signup-box" class="card hidden">
         <div class="logo-placeholder">Dayflow Logo</div>
         <h2 style="margin-bottom: 20px; color: #4b5563;">Sign Up</h2>
-        <form>
+        <form onsubmit="handleLogin(event)">
             <div class="input-group">
                 <label>Company Name :-</label>
                 <input type="text" placeholder="Enter Company Name">
@@ -44,20 +44,20 @@
             <div class="input-group"><label>Phone :-</label><input type="text" placeholder="Contact Number"></div>
             <div class="input-group"><label>Password :-</label><input type="password" placeholder="••••••••"></div>
             <div class="input-group"><label>Confirm Password :-</label><input type="password" placeholder="••••••••"></div>
-            <button type="submit" class="btn-purple" onclick="handleLogin(event)">Create Account</button>
+            <button type="submit" class="btn-purple">Create Account</button>
         </form>
         <p class="footer-text">Already have an account? <span onclick="togglePages()">Sign In</span></p>
     </div>
 
-    
+
     <div id="dashboard" class="hidden-main">
         <nav class="navbar">
             <div class="nav-left">
-                <div class="logo-sm" style="cursor:pointer" onclick="showDashboard()">Dayflow</div>
+                <div class="logo-sm" onclick="showDashboard()">Dayflow</div>
                 <ul class="nav-links">
-                    <li class="active">Employees</li>
-                    <li>Attendance</li>
-                    <li>Time Off</li>
+                    <li class="active" onclick="showDashboard()">Employees</li>
+                    <li onclick="showAttendance()">Attendance</li> 
+                    <li onclick="showTimeOff()">Time Off</li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -75,9 +75,10 @@
         <main class="main-content">
             <div class="action-bar">
                 <button class="btn-new">NEW</button>
-                <input type="text" class="search-bar" placeholder="Search">
+              <input type="text" class="search-bar" placeholder="Search employees...">
             </div>
             <div class="employee-grid">
+
                 <div class="emp-card" onclick="openProfile()"><span class="card-status dot-green"></span><div class="emp-img">👤</div><p class="emp-name">Sakshi K.</p></div>
                 <div class="emp-card" onclick="openProfile()"><span class="card-status dot-yellow"></span><div class="emp-img">👤</div><p class="emp-name">John Doe</p></div>
                 <div class="emp-card" onclick="openProfile()"><span class="card-status dot-airplane">✈️</span><div class="emp-img">👤</div><p class="emp-name">Jane Smith</p></div>
@@ -95,15 +96,14 @@
         </div>
     </div>
 
-    
+
     <div id="profile-page" class="hidden">
         <nav class="navbar">
-            <div class="nav-left"><div class="logo-sm" style="cursor:pointer" onclick="showDashboard()">Dayflow</div></div>
+            <div class="nav-left"><div class="logo-sm" onclick="showDashboard()">Dayflow</div></div>
             <div class="nav-right"><div class="user-avatar" onclick="toggleDropdown()">👤</div></div>
         </nav>
 
         <div class="profile-container">
-            
             <div class="profile-header-card">
                 <div class="avatar-big">
                     <img src="https://via.placeholder.com/120" alt="Profile">
@@ -119,7 +119,6 @@
                 </div>
             </div>
 
-            
             <div class="tabs-nav">
                 <button class="tab-btn active" onclick="showTab('resume', event)">Resume</button>
                 <button class="tab-btn" onclick="showTab('private', event)">Private Info</button>
@@ -127,15 +126,13 @@
                 <button class="tab-btn" onclick="showTab('security', event)">Security</button>
             </div>
 
-            
             <div id="resume-content" class="tab-pane">
                 <div class="two-column">
-                    <div class="content-box"><h4>About ✏️</h4><textarea>I am a developer...</textarea></div>
-                    <div class="content-box"><h4>Skills </h4><p>HTML, CSS, JS</p></div>
+                    <div class="content-box"><h4>About ✏️</h4><textarea readonly>Lorem ipsum dolor sit amet...</textarea></div>
+                    <div class="content-box"><h4>Skills <span class="add-btn">+ Add</span></h4><p>HTML, CSS, JS, UI Design</p></div>
                 </div>
             </div>
 
-        
             <div id="private-content" class="tab-pane hidden">
                 <div class="two-column">
                     <div class="content-box">
@@ -146,19 +143,18 @@
                     </div>
                     <div class="content-box">
                         <h4>Bank Details</h4>
-                        <div class="salary-row"><span>Bank Name</span> <input type="text" value="HDFC"></div>
-                        <div class="salary-row"><span>Account No</span> <input type="text" value="123456789"></div>
+                        <div class="salary-row"><span>Bank Name</span> <input type="text" value="HDFC Bank"></div>
+                        <div class="salary-row"><span>Account No</span> <input type="text" value="1234567890"></div>
                     </div>
                 </div>
             </div>
 
-            
             <div id="salary-content" class="tab-pane hidden">
                 <div class="content-box">
-                    <h4>Automatic Salary Calculation</h4>
+                    <h4>Salary Estimator</h4>
                     <div class="input-group">
                         <label>Enter Monthly Wage (₹) :-</label>
-                        <input type="number" id="total-wage" oninput="calculateSalary()" placeholder="e.g. 50000">
+                        <input type="number" id="total-wage" oninput="calculateSalary()" placeholder="50000">
                     </div>
                     <div class="salary-card">
                         <div class="salary-row"><span>Basic (50%)</span> <span id="calc-basic">0.00 ₹</span></div>
@@ -171,15 +167,71 @@
                 </div>
             </div>
 
-            
             <div id="security-content" class="tab-pane hidden">
                 <div class="content-box">
                     <h4>Security Settings</h4>
-                    <div class="salary-row"><span>Change Password</span> <button class="btn-new">Reset</button></div>
+                    <div class="salary-row"><span>Change Password</span> <button class="btn-systray">Reset</button></div>
                     <div class="salary-row"><span>Two-Factor Auth</span> <input type="checkbox"></div>
                 </div>
             </div>
         </div>
+    </div>
+    
+
+    <div id="attendance-page" class="hidden">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo-sm" onclick="showDashboard()">Dayflow</div>
+                <ul class="nav-links">
+                    <li onclick="showDashboard()">Employees</li>
+                    <li class="active" onclick="showAttendance()">Attendance</li> 
+                    <li onclick="showTimeOff()">Time Off</li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <span id="header-status-dot-attendance" class="status-dot dot-red"></span>
+                <div class="user-avatar" onclick="toggleDropdown()">👤</div>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="attendance-header">
+                <h2>Attendance History</h2>
+                
+                <div id="admin-controls" class="hidden">
+                   <input type="text" class="search-bar" placeholder="Search by name..." oninput="filterAttendance()">
+                </div>
+            </div>
+
+            <div class="attendance-nav">
+                <div class="nav-btns">
+                    <button class="btn-systray"><-</button>
+                    <button class="btn-systray">-></button>
+                </div>
+
+                <div id="employee-summaries" class="hidden">
+                    <div class="summary-box"><span>Oct v</span></div>
+                    <div class="summary-box"><label>Days Present</label><strong>22</strong></div>
+                    <div class="summary-box"><label>Leaves</label><strong>02</strong></div>
+                    <div class="summary-box"><label>Total Days</label><strong>24</strong></div>
+                </div>
+
+                <div id="admin-date-controls" class="hidden">
+                    <button class="btn-systray">Date v</button>
+                    <button class="btn-systray">Day</button>
+                </div>
+            </div>
+
+            <div class="attendance-table-container">
+                <p class="table-date">Current View: 22 October 2025</p>
+                <table class="attendance-table">
+                    <thead>
+                        <tr id="table-headers"></tr>
+                    </thead>
+                    <tbody id="attendance-data"></tbody>
+                </table>
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>

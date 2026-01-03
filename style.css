@@ -199,3 +199,43 @@ body.dashboard-active {
 .content-box input:focus {
     border-bottom: 2px solid #D8B4FE;
 }
+
+.attendance-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.attendance-nav { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; flex-wrap: wrap; }
+.nav-btns { display: flex; gap: 5px; }
+
+.summary-box { 
+    background: white; border: 1px solid #ddd; padding: 5px 15px; 
+    border-radius: 5px; text-align: center; display: flex; flex-direction: column;
+}
+.summary-box label { font-size: 10px; color: #6b7280; }
+.summary-box strong { font-size: 14px; color: #7c3aed; }
+
+.table-date { background: #f9fafb; padding: 10px; font-weight: bold; border: 1px solid #ddd; border-bottom: none; }
+
+.attendance-table { width: 100%; border-collapse: collapse; background: white; border: 1px solid #ddd; }
+.attendance-table th, .attendance-table td { 
+    border: 1px solid #ddd; padding: 12px; text-align: left; font-size: 14px;
+}
+.attendance-table th { background: #f3f4f6; color: #374151; font-weight: 600; }
+.attendance-table tr:hover { background: #f9fafb; }
+
+@media (max-width: 768px) {
+    .two-column {
+        grid-template-columns: 1fr; 
+    }
+    .profile-header-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+.nav-links li:hover {
+    color: #7c3aed;
+    transition: 0.3s;
+}
