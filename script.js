@@ -9,12 +9,44 @@ function togglePages() {
     document.getElementById('signup-box').classList.toggle('hidden');
 }
 
-function handleLogin(event) {
+async function handleLogin(event) {
     event.preventDefault();
-    document.getElementById('signin-box').classList.add('hidden');
-    document.getElementById('signup-box').classList.add('hidden');
-    showDashboard();
-    document.body.classList.add('dashboard-active');
+
+    // Check karo ki ye Login hai ya Signup
+    const isSignup = event.target.closest('#signup-box') !== null;
+    const endpoint = isSignup ? '/api/signup' : '/api/login';
+
+    // Sare inputs ko ek object mein dalo (Professional tareeka)
+    const formData = new FormData(event.target);
+    const payload = Object.fromEntries(formData);
+
+    try {
+       const response = await fetch('http://localhost:5001/api/signup', { 
+    // Port 5001 use karo
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+});
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert(data.message);
+            if(!isSignup) {
+                document.getElementById('signin-box').classList.add('hidden');
+                document.getElementById('dashboard').classList.remove('hidden-main');
+                document.body.classList.add('dashboard-active');
+                showDashboard();
+            } else {
+                togglePages(); // Signup ke baad Login par bhej do
+            }
+        } else {
+            alert("Galti: " + data.message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Server band hai ya URL galat hai!");
+    }
 }
 
 function hideAllPages() {
