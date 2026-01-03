@@ -238,4 +238,77 @@ body.dashboard-active {
 .nav-links li:hover {
     color: #7c3aed;
     transition: 0.3s;
+} 
+
+#modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); display: flex; justify-content: center;
+    align-items: center; z-index: 100;
+}
+
+
+.btn-approve { background: #22c55e; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+.btn-reject { background: #ef4444; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; }
+
+select { border: none; outline: none; background: #f9fafb; } 
+
+#modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modal-overlay .card {
+    margin: 0; 
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+
+.btn-approve { 
+    background: #22c55e; color: white; border: none; padding: 4px 8px; 
+    border-radius: 4px; cursor: pointer; font-size: 12px; margin-right: 5px;
+}
+.btn-reject { 
+    background: #ef4444; color: white; border: none; padding: 4px 8px; 
+    border-radius: 4px; cursor: pointer; font-size: 12px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    outline: none;
+    background: transparent;
+    margin-bottom: 15px;
+} 
+.attendance-nav {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+.summary-box {
+    background: white;
+    border: 1px solid #d1d5db;
+    padding: 15px 25px;
+    border-radius: 10px;
+    min-width: 150px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+.summary-box strong {
+    font-size: 20px;
+    color: #7c3aed;
+    display: block;
 }
