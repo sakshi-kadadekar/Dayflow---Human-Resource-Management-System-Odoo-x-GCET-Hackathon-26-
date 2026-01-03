@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
     <div id="signin-box" class="card">
         <div class="logo-placeholder">Dayflow Logo</div>
         <h2>Sign In</h2>
@@ -26,25 +25,24 @@
         <p class="footer-text">Don't have an Account? <span onclick="togglePages()">Sign Up</span></p>
     </div>
 
-
     <div id="signup-box" class="card hidden">
         <div class="logo-placeholder">Dayflow Logo</div>
         <h2>Sign Up</h2>
-        <form onsubmit="handleSignUp(event)">
+        <form onsubmit="handleLogin(event)">
             <div class="input-group">
                 <label>Company Name :-</label>
-                <input type="text" placeholder="Enter Company Name" required>
+                <input type="text" placeholder="Enter Company Name">
                 <div class="tooltip" onclick="document.getElementById('logo-input').click()">
                     <span class="upload-icon">⬆️</span>
                     <span class="tooltiptext">Upload Company Logo</span>
                 </div>
                 <input type="file" id="logo-input" style="display:none" accept="image/*">
             </div>
-            <div class="input-group"><label>Name :-</label><input type="text" placeholder="Full Name" required></div>
-            <div class="input-group"><label>Email :-</label><input type="email" placeholder="Email Address" required></div>
-            <div class="input-group"><label>Phone :-</label><input type="text" placeholder="Contact Number" required></div>
-            <div class="input-group"><label>Password :-</label><input type="password" placeholder="••••••••" required></div>
-            <div class="input-group"><label>Confirm Password :-</label><input type="password" placeholder="••••••••" required></div>
+            <div class="input-group"><label>Name :-</label><input type="text" placeholder="Full Name"></div>
+            <div class="input-group"><label>Email :-</label><input type="email" placeholder="Email Address"></div>
+            <div class="input-group"><label>Phone :-</label><input type="text" placeholder="Contact Number"></div>
+            <div class="input-group"><label>Password :-</label><input type="password" placeholder="••••••••"></div>
+            <div class="input-group"><label>Confirm Password :-</label><input type="password" placeholder="••••••••"></div>
             <button type="submit" class="btn-purple">Create Account</button>
         </form>
         <p class="footer-text">Already have an account? <span onclick="togglePages()">Sign In</span></p>
@@ -151,8 +149,8 @@
                     <div class="salary-card">
                       <div class="salary-row"><span>Basic (50%)</span> <span id="calc-basic">0.00 ₹</span></div>
                       <div class="salary-row"><span>HRA (25%)</span> <span id="calc-hra">0.00 ₹</span></div>
-                      <div class="salary-row"><span>Perf. Bonus (8.33%)</span> <span>4165.00 ₹</span></div> 
-                      <div class="salary-row"><span>Travel Allw. (8.33%)</span> <span>4165.00 ₹</span></div> 
+                      <div class="salary -row"><span>Perf. Bonus (8.33%)</span> <span>4165.00 ₹</span></div> 
+                      <div class="salary-row"><span>Travel Allw. (8.33%)</span> <span>4165.00 ₹</span></div> <!-- Static value for now -->
                       <div class="salary-row"><span>PF</span> <span id="calc-pf">3000.00 ₹</span></div>
                     </div>
                 </div>
