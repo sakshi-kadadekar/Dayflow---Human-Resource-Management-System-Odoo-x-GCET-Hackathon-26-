@@ -36,7 +36,7 @@ function showDashboard() {
     document.getElementById('dashboard').classList.remove('hidden-main');
 }
 
-function showTab(tabName) {
+function showTab(tabName, event) {
     
     document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.add('hidden'));
     
@@ -44,12 +44,11 @@ function showTab(tabName) {
     const targetPane = document.getElementById(tabName + '-content');
     if(targetPane) targetPane.classList.remove('hidden');
 
-    
+
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     
-    
-    if(window.event) {
-        window.event.currentTarget.classList.add('active');
+    if(event) {
+        event.currentTarget.classList.add('active');
     }
 }
 
@@ -100,3 +99,27 @@ document.querySelector('.search-bar').addEventListener('input', function(e) {
         }
     });
 });
+function calculateSalary() {
+    const totalWage = parseFloat(document.getElementById('total-wage').value) || 0;
+
+    
+    const basic = totalWage * 0.50;
+    const hra = basic * 0.50;      
+    const stdAllowance = 4167;     
+    const bonus = totalWage * 0.0833; 
+    const lta = totalWage * 0.0833;   
+    
+    
+    const pf = basic * 0.12;
+    const profTax = 200; 
+
+    
+    document.getElementById('calc-basic').innerText = basic.toFixed(2) + " ₹";
+    document.getElementById('calc-hra').innerText = hra.toFixed(2) + " ₹";
+    document.getElementById('calc-pf').innerText = pf.toFixed(2) + " ₹";
+    document.getElementById('calc-bonus').innerText = bonus.toFixed(2) + " ₹";
+    
+    
+    const fixedAllowance = totalWage - (basic + hra + stdAllowance + bonus + lta);
+    document.getElementById('calc-fixed').innerText = (fixedAllowance > 0 ? fixedAllowance.toFixed(2) : "0.00") + " ₹";
+}

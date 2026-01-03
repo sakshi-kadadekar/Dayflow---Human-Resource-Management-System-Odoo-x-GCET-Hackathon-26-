@@ -181,3 +181,21 @@ body.dashboard-active {
     position: fixed; bottom: 20px; right: 20px; background: white; 
     border: 1px solid #ddd; padding: 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
 }
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.content-box input {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    text-align: right;
+    width: 60%;
+    outline: none;
+    color: #4b5563;
+}
+
+.content-box input:focus {
+    border-bottom: 2px solid #D8B4FE;
+}

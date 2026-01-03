@@ -8,7 +8,7 @@
 </head>
 <body>
 
-
+    
     <div id="signin-box" class="card">
         <div class="logo-placeholder">Dayflow Logo</div>
         <h2 style="margin-bottom: 20px; color: #4b5563;">Sign In</h2>
@@ -26,178 +26,162 @@
         <p class="footer-text">Don't have an Account? <span onclick="togglePages()">Sign Up</span></p>
     </div>
 
-<div id="signup-box" class="card hidden">
-    <div class="logo-placeholder">Dayflow Logo</div>
-    <h2 style="margin-bottom: 20px; color: #4b5563;">Sign Up</h2>
-    
-    <form>
-        <div class="input-group">
-            <label>Company Name :-</label>
-            <input type="text" placeholder="Enter Company Name">
-            
-            <div class="tooltip" onclick="document.getElementById('logo-input').click()">
-                <span class="upload-icon">⬆️</span>
-                <span class="tooltiptext">Upload Company Logo</span>
-            </div>
-            <input type="file" id="logo-input" style="display:none" accept="image/*">
-        </div>
-
-        <div class="input-group">
-            <label>Name :-</label>
-            <input type="text" placeholder="Full Name">
-        </div>
-
-        <div class="input-group">
-            <label>Email :-</label>
-            <input type="email" placeholder="Email Address">
-        </div>
-
-        <div class="input-group">
-            <label>Phone :-</label>
-            <input type="text" placeholder="Contact Number">
-        </div>
-
-        <div class="input-group">
-            <label>Password :-</label>
-            <input type="password" placeholder="••••••••">
-        </div>
-
-        <div class="input-group">
-            <label>Confirm Password :-</label>
-            <input type="password" placeholder="••••••••">
-        </div>
-
-        <button type="submit" class="btn-purple" onclick="handleLogin(event)">Create Account</button>    </form>
-    
-    <p class="footer-text">Already have an account? <span onclick="togglePages()">Sign In</span></p>
-</div>
-
-<div id="dashboard" class="hidden-main">
-
-    <nav class="navbar">
-        <div class="nav-left">
-            <div class="logo-sm" style="cursor:pointer" onclick="showDashboard()">Dayflow</div>
-            <ul class="nav-links">
-                <li class="active">Employees</li>
-                <li>Attendance</li>
-                <li>Time Off</li>
-            </ul>
-        </div>
-        <div class="nav-right">
-            
-            <span id="header-status-dot" class="status-dot dot-red"></span>
-            <div class="user-avatar" onclick="toggleDropdown()">
-                👤
-                <div id="profile-dropdown" class="dropdown hidden">
-                   <div class="dropdown-item" onclick="openProfile()">My Profile</div>
-                  <div class="dropdown-item" onclick="logout()">Log Out</div>
+    <div id="signup-box" class="card hidden">
+        <div class="logo-placeholder">Dayflow Logo</div>
+        <h2 style="margin-bottom: 20px; color: #4b5563;">Sign Up</h2>
+        <form>
+            <div class="input-group">
+                <label>Company Name :-</label>
+                <input type="text" placeholder="Enter Company Name">
+                <div class="tooltip" onclick="document.getElementById('logo-input').click()">
+                    <span class="upload-icon">⬆️</span>
+                    <span class="tooltiptext">Upload Company Logo</span>
                 </div>
+                <input type="file" id="logo-input" style="display:none" accept="image/*">
             </div>
-        </div>
-    </nav>
+            <div class="input-group"><label>Name :-</label><input type="text" placeholder="Full Name"></div>
+            <div class="input-group"><label>Email :-</label><input type="email" placeholder="Email Address"></div>
+            <div class="input-group"><label>Phone :-</label><input type="text" placeholder="Contact Number"></div>
+            <div class="input-group"><label>Password :-</label><input type="password" placeholder="••••••••"></div>
+            <div class="input-group"><label>Confirm Password :-</label><input type="password" placeholder="••••••••"></div>
+            <button type="submit" class="btn-purple" onclick="handleLogin(event)">Create Account</button>
+        </form>
+        <p class="footer-text">Already have an account? <span onclick="togglePages()">Sign In</span></p>
+    </div>
 
-   
-    <main class="main-content">
-        <div class="action-bar">
-            <button class="btn-new">NEW</button>
-            <input type="text" class="search-bar" placeholder="Search">
-        </div>
-
-        <div class="employee-grid">
-            
-            <div class="emp-card" onclick ="openProfile()">
-                <span class="card-status dot-green"></span>
-                <div class="emp-img">👤</div>
-                <p class="emp-name">[Employee Name]</p>
+    
+    <div id="dashboard" class="hidden-main">
+        <nav class="navbar">
+            <div class="nav-left">
+                <div class="logo-sm" style="cursor:pointer" onclick="showDashboard()">Dayflow</div>
+                <ul class="nav-links">
+                    <li class="active">Employees</li>
+                    <li>Attendance</li>
+                    <li>Time Off</li>
+                </ul>
             </div>
-            
-            <div class="emp-card" onclick="openProfile()"><span class="card-status dot-yellow"></span><div class="emp-img">👤</div><p class="emp-name">John Doe</p></div>
-            <div class="emp-card" onclick="openProfile()"><span class="card-status dot-airplane">✈️</span><div class="emp-img">👤</div><p class="emp-name">Jane Smith</p></div>
-        </div>
-    </main>
-
-   
-    <div class="systray">
-        <div id="check-in-box">
-            <button class="btn-systray" onclick="handleCheckIn()">Check IN -></button>
-        </div>
-        <div id="check-out-box" class="hidden">
-            <p class="since-text">Since 09:00 AM</p>
-            <button class="btn-systray" onclick="handleCheckOut()">Check Out -></button>
-        </div>
-    </div>
-</div>
-<div id="profile-page" class="hidden">
-   
-    <div class="profile-container">
-        
-        <div class="profile-header-card">
-        <div class="avatar-big">
-        <img src="https://via.placeholder.com/120" alt="Profile">
-        <span class="edit-icon">✏️</span>
-    </div>
-    <div class="info-grid">
-        <div class="info-item"><h3>Sakshi Kadadekar</h3></div>
-        <div class="info-item"><label>Email</label><p>sakshi@example.com</p></div>
-        <div class="info-item"><label>Mobile</label><p>+91 9876543210</p></div>
-        <div class="info-item"><label>Company</label><p>Dayflow</p></div>
-        <div class="info-item"><label>Login ID</label><p>OIJODO20260001</p></div>
-        <div class="info-item"><label>Department</label><p>Engineering</p></div>
-    </div>
-</div>
-
-        
-        <div class="tabs-nav">
-            <button class="tab-btn active" onclick="showTab('resume')">Resume</button>
-            <button class="tab-btn" onclick="showTab('private')">Private Info</button>
-            <button id="salary-tab" class="tab-btn hidden" onclick="showTab('salary')">Salary Info</button>
-        </div>
-
-       
-        <div id="resume-content" class="tab-pane">
-            <div class="two-column">
-                <div class="left-col">
-                    <div class="content-box">
-                        <h4>About ✏️</h4>
-                        <textarea>Lorem ipsum...</textarea>
-                    </div>
-                </div>
-                <div class="right-col">
-                    <div class="content-box">
-                        <h4>Skills <span class="add-btn">+ Add Skills</span></h4>
+            <div class="nav-right">
+                <span id="header-status-dot" class="status-dot dot-red"></span>
+                <div class="user-avatar" onclick="toggleDropdown()">
+                    👤
+                    <div id="profile-dropdown" class="dropdown hidden">
+                        <div class="dropdown-item" onclick="openProfile()">My Profile</div>
+                        <div class="dropdown-item" onclick="logout()">Log Out</div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div id="private-content" class="tab-pane hidden">
-          <div class="content-box">
-          <h4>Private Information</h4>
-          <div class="salary-row"><span>Address</span> <span>Mumbai, Maharashtra</span></div>
-          <div class="salary-row"><span>Date of Birth</span> <span>01 Jan 2000</span></div>
-          <div class="salary-row"><span>Gender</span> <span>Female</span></div>
-        </div>
-    </div> 
+        </nav>
 
-        
-        <div id="salary-content" class="tab-pane hidden">
-           <div class="salary-card">
-               <h3>Salary Info</h3>
-               <div class="salary-row"><span>Month Wage</span> <span>50000 ₹</span></div>
-               <div class="salary-row"><span>Yearly Wage</span> <span>600000 ₹</span></div>
-               <hr>
-               <h4>Salary Components</h4>
-               <div class="salary-row"><span>Basic Salary</span> <span>25000.00 ₹</span></div>
-               <div class="salary-row"><span>House Rent Allowance (HRA)</span> <span>12500.00 ₹</span></div>
-               <div class="salary-row"><span>Performance Bonus</span> <span>2000.00 ₹</span></div>
-               <hr>
-               <h4>Deductions</h4>
-               <div class="salary-row"><span>Provident Fund (PF)</span> <span>3000.00 ₹</span></div>
-               <div class="salary-row"><span>Professional Tax</span> <span>200.00 ₹</span></div>
+        <main class="main-content">
+            <div class="action-bar">
+                <button class="btn-new">NEW</button>
+                <input type="text" class="search-bar" placeholder="Search">
+            </div>
+            <div class="employee-grid">
+                <div class="emp-card" onclick="openProfile()"><span class="card-status dot-green"></span><div class="emp-img">👤</div><p class="emp-name">Sakshi K.</p></div>
+                <div class="emp-card" onclick="openProfile()"><span class="card-status dot-yellow"></span><div class="emp-img">👤</div><p class="emp-name">John Doe</p></div>
+                <div class="emp-card" onclick="openProfile()"><span class="card-status dot-airplane">✈️</span><div class="emp-img">👤</div><p class="emp-name">Jane Smith</p></div>
+            </div>
+        </main>
+
+        <div class="systray">
+            <div id="check-in-box">
+                <button class="btn-systray" onclick="handleCheckIn()">Check IN -></button>
+            </div>
+            <div id="check-out-box" class="hidden">
+                <p class="since-text">Since 09:00 AM</p>
+                <button class="btn-systray" onclick="handleCheckOut()">Check Out -></button>
             </div>
         </div>
     </div>
-</div>
 
-<script src="script.js"></script>
+    
+    <div id="profile-page" class="hidden">
+        <nav class="navbar">
+            <div class="nav-left"><div class="logo-sm" style="cursor:pointer" onclick="showDashboard()">Dayflow</div></div>
+            <div class="nav-right"><div class="user-avatar" onclick="toggleDropdown()">👤</div></div>
+        </nav>
+
+        <div class="profile-container">
+            
+            <div class="profile-header-card">
+                <div class="avatar-big">
+                    <img src="https://via.placeholder.com/120" alt="Profile">
+                    <span class="edit-pencil">✏️</span>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item"><h3>Sakshi Kadadekar</h3></div>
+                    <div class="info-item"><label>Email</label><p>sakshi@example.com</p></div>
+                    <div class="info-item"><label>Mobile</label><p>+91 9876543210</p></div>
+                    <div class="info-item"><label>Company</label><p>Dayflow</p></div>
+                    <div class="info-item"><label>Login ID</label><p>OIJODO20260001</p></div>
+                    <div class="info-item"><label>Department</label><p>Engineering</p></div>
+                </div>
+            </div>
+
+            
+            <div class="tabs-nav">
+                <button class="tab-btn active" onclick="showTab('resume', event)">Resume</button>
+                <button class="tab-btn" onclick="showTab('private', event)">Private Info</button>
+                <button id="salary-tab" class="tab-btn hidden" onclick="showTab('salary', event)">Salary Info</button>
+                <button class="tab-btn" onclick="showTab('security', event)">Security</button>
+            </div>
+
+            
+            <div id="resume-content" class="tab-pane">
+                <div class="two-column">
+                    <div class="content-box"><h4>About ✏️</h4><textarea>I am a developer...</textarea></div>
+                    <div class="content-box"><h4>Skills </h4><p>HTML, CSS, JS</p></div>
+                </div>
+            </div>
+
+        
+            <div id="private-content" class="tab-pane hidden">
+                <div class="two-column">
+                    <div class="content-box">
+                        <h4>Personal Details</h4>
+                        <div class="salary-row"><span>Date of Birth</span> <input type="date" value="2000-01-01"></div>
+                        <div class="salary-row"><span>Address</span> <input type="text" value="Mumbai"></div>
+                        <div class="salary-row"><span>Gender</span> <input type="text" value="Female"></div>
+                    </div>
+                    <div class="content-box">
+                        <h4>Bank Details</h4>
+                        <div class="salary-row"><span>Bank Name</span> <input type="text" value="HDFC"></div>
+                        <div class="salary-row"><span>Account No</span> <input type="text" value="123456789"></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="salary-content" class="tab-pane hidden">
+                <div class="content-box">
+                    <h4>Automatic Salary Calculation</h4>
+                    <div class="input-group">
+                        <label>Enter Monthly Wage (₹) :-</label>
+                        <input type="number" id="total-wage" oninput="calculateSalary()" placeholder="e.g. 50000">
+                    </div>
+                    <div class="salary-card">
+                        <div class="salary-row"><span>Basic (50%)</span> <span id="calc-basic">0.00 ₹</span></div>
+                        <div class="salary-row"><span>HRA (50% of Basic)</span> <span id="calc-hra">0.00 ₹</span></div>
+                        <div class="salary-row"><span>PF (12%)</span> <span id="calc-pf">0.00 ₹</span></div>
+                        <div class="salary-row"><span>Fixed Allowance</span> <span id="calc-fixed">0.00 ₹</span></div>
+                        <hr>
+                        <div class="salary-row"><span>Prof Tax (Fixed)</span> <span>200.00 ₹</span></div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div id="security-content" class="tab-pane hidden">
+                <div class="content-box">
+                    <h4>Security Settings</h4>
+                    <div class="salary-row"><span>Change Password</span> <button class="btn-new">Reset</button></div>
+                    <div class="salary-row"><span>Two-Factor Auth</span> <input type="checkbox"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
