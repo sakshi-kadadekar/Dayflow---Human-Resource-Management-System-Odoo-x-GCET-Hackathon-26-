@@ -151,3 +151,43 @@ body {
 .hidden { 
     display: none; 
 }
+/* Body Fix: Login ke waqt centering, Dashboard ke waqt normal layout */
+body { display: block; padding-top: 0; }
+#signin-box, #signup-box { margin: 100px auto; } /* Login ko center rakhne ke liye */
+
+.hidden-main { display: none; }
+
+/* Navbar */
+.navbar { background: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 30px; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 10; }
+.nav-left { display: flex; align-items: center; gap: 30px; }
+.logo-sm { font-weight: bold; color: #4b5563; border: 1px solid #ddd; padding: 5px 10px; }
+.nav-links { display: flex; list-style: none; gap: 20px; color: #6b7280; font-size: 14px; }
+.nav-links .active { color: #7c3aed; font-weight: bold; border-bottom: 2px solid #7c3aed; }
+
+/* Status Dots */
+.status-dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 15px; }
+.dot-red { background: #ef4444; }
+.dot-green { background: #22c55e; }
+.dot-yellow { background: #f59e0b; }
+.dot-airplane { font-size: 10px; position: absolute; top: 10px; right: 10px; }
+
+/* Employee Grid */
+.main-content { padding: 30px; }
+.action-bar { display: flex; gap: 10px; margin-bottom: 20px; }
+.btn-new { background: #D8B4FE; color: white; border: none; padding: 5px 15px; border-radius: 4px; cursor: pointer; }
+.search-bar { border: 1px solid #ddd; padding: 5px; width: 250px; border-radius: 4px; }
+
+.employee-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 20px; }
+.emp-card { background: white; border: 1px solid #e5e7eb; padding: 20px; text-align: center; border-radius: 8px; position: relative; cursor: pointer; }
+.card-status { width: 10px; height: 10px; border-radius: 50%; position: absolute; top: 10px; right: 10px; }
+
+/* Avatar & Dropdown */
+.user-avatar { width: 35px; height: 35px; background: #e5e7eb; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; }
+.dropdown { position: absolute; top: 45px; right: 0; background: white; border: 1px solid #ddd; width: 120px; border-radius: 5px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.dropdown-item { padding: 10px; font-size: 13px; cursor: pointer; }
+.dropdown-item:hover { background: #f3f4f6; }
+
+/* Systray */
+.systray { position: fixed; bottom: 20px; right: 20px; background: white; border: 1px solid #ddd; padding: 15px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.btn-systray { background: white; border: 1px solid #ddd; padding: 5px 15px; border-radius: 4px; cursor: pointer; font-size: 13px; }
+.since-text { font-size: 11px; color: #9ca3af; margin-bottom: 5px; }

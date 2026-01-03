@@ -21,7 +21,7 @@
                 <label>Password :-</label>
                 <input type="password" placeholder="••••••••">
             </div>
-            <button type="submit" class="btn-purple">Sign In</button>
+            <button type="submit" class="btn-purple" onclick="handleLogin(event)">Sign In</button>
         </form>
         <p class="footer-text">Don't have an Account? <span onclick="togglePages()">Sign Up</span></p>
     </div>
@@ -67,20 +67,67 @@
             <input type="password" placeholder="••••••••">
         </div>
 
-        <button type="submit" class="btn-purple">Create Account</button>
-    </form>
+        <button type="submit" class="btn-purple" onclick="handleLogin(event)">Create Account</button>    </form>
     
     <p class="footer-text">Already have an account? <span onclick="togglePages()">Sign In</span></p>
 </div>
+<!-- DASHBOARD SECTION (Initially Hidden) -->
+<div id="dashboard" class="hidden-main">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo-sm">Dayflow</div>
+            <ul class="nav-links">
+                <li class="active">Employees</li>
+                <li>Attendance</li>
+                <li>Time Off</li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <!-- Status Dot (Red for Out, Green for In) -->
+            <span id="header-status-dot" class="status-dot dot-red"></span>
+            <div class="user-avatar" onclick="toggleDropdown()">
+                👤
+                <div id="profile-dropdown" class="dropdown hidden">
+                    <div class="dropdown-item">My Profile</div>
+                    <div class="dropdown-item" onclick="logout()">Log Out</div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <script>
-        function togglePages() {
-            const signIn = document.getElementById('signin-box');
-            const signUp = document.getElementById('signup-box');
-            
-            signIn.classList.toggle('hidden');
-            signUp.classList.toggle('hidden');
-        }
-    </script>
+    <!-- Content -->
+    <main class="main-content">
+        <div class="action-bar">
+            <button class="btn-new">NEW</button>
+            <input type="text" class="search-bar" placeholder="Search">
+        </div>
+
+        <div class="employee-grid">
+            <!-- Employee Card Example -->
+            <div class="emp-card">
+                <span class="card-status dot-green"></span>
+                <div class="emp-img">👤</div>
+                <p class="emp-name">[Employee Name]</p>
+            </div>
+            <!-- Copy this card 5-6 times for filling the grid -->
+            <div class="emp-card"><span class="card-status dot-yellow"></span><div class="emp-img">👤</div><p class="emp-name">John Doe</p></div>
+            <div class="emp-card"><span class="card-status dot-airplane">✈️</span><div class="emp-img">👤</div><p class="emp-name">Jane Smith</p></div>
+        </div>
+    </main>
+
+    <!-- Systray (Check In/Out) -->
+    <div class="systray">
+        <div id="check-in-box">
+            <button class="btn-systray" onclick="handleCheckIn()">Check IN -></button>
+        </div>
+        <div id="check-out-box" class="hidden">
+            <p class="since-text">Since 09:00 AM</p>
+            <button class="btn-systray" onclick="handleCheckOut()">Check Out -></button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
