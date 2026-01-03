@@ -1,0 +1,153 @@
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', sans-serif; 
+}
+
+body { 
+    background-color: #f3f4f6; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.card { 
+    background: white; 
+    width: 400px; 
+    padding: 30px; 
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+    text-align: center; 
+    border-top: 6px solid #D8B4FE; 
+}
+
+.logo-placeholder { 
+    background: #e5e7eb; 
+    height: 50px; 
+    margin-bottom: 25px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    color: #9ca3af; 
+    border-radius: 8px; 
+    font-weight: bold; 
+}
+
+.input-group { 
+    text-align: left; 
+    margin-bottom: 15px; 
+    position: relative; 
+}
+
+.input-group label { 
+    display: block; 
+    font-size: 13px; 
+    margin-bottom: 5px; 
+    color: #374151; 
+    font-weight: 600; 
+}
+
+.input-group input { 
+    width: 100%; 
+    padding: 10px; 
+    padding-right: 30px; 
+    border: none; 
+    border-bottom: 2px solid #d1d5db; 
+    outline: none; 
+    transition: 0.3s; 
+    background: transparent;
+}
+
+.input-group input:focus { 
+    border-bottom: 2px solid #D8B4FE; 
+}
+
+.btn-purple { 
+    width: 100%; 
+    padding: 12px; 
+    background-color: #D8B4FE; 
+    color: white; 
+    border: none; 
+    border-radius: 25px; 
+    cursor: pointer; 
+    font-weight: bold; 
+    font-size: 16px; 
+    margin-top: 15px; 
+    text-transform: uppercase; 
+    transition: 0.3s;
+}
+
+.btn-purple:hover { 
+    background-color: #c084fc; 
+}
+
+.footer-text { 
+    margin-top: 20px; 
+    font-size: 13px; 
+    color: #6b7280; 
+}
+
+.footer-text span { 
+    color: #3b82f6; 
+    cursor: pointer; 
+    text-decoration: underline; 
+}
+
+
+.tooltip {
+    position: absolute;
+    right: 5px;
+    bottom: 8px; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.upload-icon { 
+    color: #3b82f6; 
+    font-size: 18px; 
+    line-height: 1;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #4b5563; 
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 6px;
+    position: absolute;
+    z-index: 1;
+    bottom: 130%; 
+    left: 50%;
+    margin-left: -120px; 
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 11px;
+    font-weight: normal;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 85%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #4b5563 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden { 
+    display: none; 
+}

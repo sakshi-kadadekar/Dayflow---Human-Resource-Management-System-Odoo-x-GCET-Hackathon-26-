@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dayflow - HRMS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div id="signin-box" class="card">
+        <div class="logo-placeholder">Dayflow Logo</div>
+        <h2 style="margin-bottom: 20px; color: #4b5563;">Sign In</h2>
+        <form>
+            <div class="input-group">
+                <label>Login Id/Email :-</label>
+                <input type="text" placeholder="OIJODO20260001">
+            </div>
+            <div class="input-group">
+                <label>Password :-</label>
+                <input type="password" placeholder="••••••••">
+            </div>
+            <button type="submit" class="btn-purple">Sign In</button>
+        </form>
+        <p class="footer-text">Don't have an Account? <span onclick="togglePages()">Sign Up</span></p>
+    </div>
+
+<div id="signup-box" class="card hidden">
+    <div class="logo-placeholder">Dayflow Logo</div>
+    <h2 style="margin-bottom: 20px; color: #4b5563;">Sign Up</h2>
+    
+    <form>
+        <div class="input-group">
+            <label>Company Name :-</label>
+            <input type="text" placeholder="Enter Company Name">
+            
+            <div class="tooltip" onclick="document.getElementById('logo-input').click()">
+                <span class="upload-icon">⬆️</span>
+                <span class="tooltiptext">Upload Company Logo</span>
+            </div>
+            <input type="file" id="logo-input" style="display:none" accept="image/*">
+        </div>
+
+        <div class="input-group">
+            <label>Name :-</label>
+            <input type="text" placeholder="Full Name">
+        </div>
+
+        <div class="input-group">
+            <label>Email :-</label>
+            <input type="email" placeholder="Email Address">
+        </div>
+
+        <div class="input-group">
+            <label>Phone :-</label>
+            <input type="text" placeholder="Contact Number">
+        </div>
+
+        <div class="input-group">
+            <label>Password :-</label>
+            <input type="password" placeholder="••••••••">
+        </div>
+
+        <div class="input-group">
+            <label>Confirm Password :-</label>
+            <input type="password" placeholder="••••••••">
+        </div>
+
+        <button type="submit" class="btn-purple">Create Account</button>
+    </form>
+    
+    <p class="footer-text">Already have an account? <span onclick="togglePages()">Sign In</span></p>
+</div>
+
+    <script>
+        function togglePages() {
+            const signIn = document.getElementById('signin-box');
+            const signUp = document.getElementById('signup-box');
+            
+            signIn.classList.toggle('hidden');
+            signUp.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
